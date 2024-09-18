@@ -98,11 +98,11 @@ class Tasks:
         authors_with_more_than_three_books = self.db.fetch_data(
             "authors",
             selected="First_Name, Last_Name, id",
-            condition=condition
+            condition=condition,
+            limit="LIMIT 5"
         )
 
         for author in authors_with_more_than_three_books:
             first_name, last_name, auth_id = author
             print(first_name, last_name, auth_id)
         print()
-        # print(authors_with_more_than_three_books)
