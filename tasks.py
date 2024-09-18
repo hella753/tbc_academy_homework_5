@@ -44,7 +44,7 @@ class Tasks:
         """
         Get the youngest authors from the "authors" table
 
-        This method finds the authors with the earliest DoB and
+        This method finds the authors with the latest DoB and
         prints the authors names.
         """
         condition = (
