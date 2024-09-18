@@ -4,6 +4,7 @@
 SQLite3 books database with fake random data. database
 consists of two tables for '**books**' with 1000 records and '**authors**' with 500 records.
 
+**The Books Database holds detailed information about published books and authors for effective data management.** 
 ### **'books' table fields.**
 
 | id | Name   | Category   | Number_of_Pages | Date   | Author_ID |
