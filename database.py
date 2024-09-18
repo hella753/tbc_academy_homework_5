@@ -19,8 +19,8 @@ class Database:
         extension; connection to the SQLite3 database and cursor for
         executing queries.
         """
-        self._books = None
-        self._authors = None
+        self._books: Tuple = tuple((),)
+        self._authors: Tuple = tuple((),)
         self.db_name = f"{db_name}.sqlite3"
         self._conn = sqlite3.connect(self.db_name)
         self._cursor = self._conn.cursor()
