@@ -57,12 +57,9 @@ class Database:
         """
         Insert data into the table.
 
-        :param table_name:
-        - Name of the table to insert data into.
-        :param columns:
-        - String representing the column names in the table
-        :param data:
-        - List of tuples containing the data to insert.
+        :param table_name: Name of the table to insert data into.
+        :param columns: String representing the column names in the table
+        :param data: List of tuples containing the data to insert.
 
         Generates the number of placeholders and inserts the data.
         """
