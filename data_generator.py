@@ -49,7 +49,12 @@ class DataGenerator(Faker):
                 datetime.date(1999, 12, 31)
             )
             city = self.city()
-            self._authors_data_list.append((first_name, last_name, dob, city))
+            self._authors_data_list.append((
+                first_name,
+                last_name,
+                dob,
+                city
+            ))
         return self._authors_data_list
 
     def generate_books(self, num: int, authors_range: int) -> List[Tuple]:
