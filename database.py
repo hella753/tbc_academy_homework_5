@@ -84,11 +84,13 @@ class Database:
         )
         self._conn.commit()
 
-    def fetch_data(self,
-                   table_name: str,
-                   selected: Optional[str] = '*',
-                   condition: Optional[str] = '',
-                   limit: Optional[str] = '') -> List[Tuple]:
+    def fetch_data(
+        self,
+        table_name: str,
+        selected: Optional[str] = '*',
+        condition: Optional[str] = '',
+        limit: Optional[str] = ''
+    ) -> List[Tuple]:
         """
         Fetch data from the table.
 
