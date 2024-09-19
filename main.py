@@ -1,6 +1,7 @@
 from database import Database
 from tasks import Tasks
 
+
 def main():
     # Initialize the database
     db = Database("books_db")
@@ -27,7 +28,7 @@ def main():
     db.create_table("authors", authors_field)
 
     # Generate and insert fake data
-    books_data, authors_data = db.generate_fake_data(1000,500)
+    books_data, authors_data = db.generate_fake_data(1000, 500)
     db.insert_data(
         'books',
         "Name, Category, Number_of_Pages, Date, Author_ID",
@@ -42,15 +43,15 @@ def main():
     # Create and execute tasks
     tasks = Tasks(db)
 
-    tasks.get_biggest_book() # Task 1
-    tasks.get_avg_page_count() # Task 2
-    tasks.get_youngest_authors() # Task 3
-    tasks.get_authors_with_no_books() # Task 4
-    tasks.bonus() # Bonus Task
+    tasks.get_biggest_book()  # Task 1
+    tasks.get_avg_page_count()  # Task 2
+    tasks.get_youngest_authors()  # Task 3
+    tasks.get_authors_with_no_books()  # Task 4
+    tasks.bonus()  # Bonus Task
 
     # Close the database connection
     db.close()
 
+
 if __name__ == "__main__":
     main()
-

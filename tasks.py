@@ -87,8 +87,8 @@ class Tasks:
         """
         Get authors who have written more than three books.
 
-        Finds authors who have more than three books listed in the "books" table
-        prints the names and the id of the authors.
+        Finds authors who have more than three books listed in the "books"
+        table and prints the names and the id of the authors.
         """
         condition = (
             "WHERE id IN "

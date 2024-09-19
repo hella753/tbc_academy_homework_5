@@ -7,8 +7,9 @@ from faker.providers import BaseProvider, date_time, person, lorem
 # List of book genres that will be used for random category.
 GENRES = [
     "Fantasy", "Science Fiction", "Dystopian", "Action & Adventure", "Mystery",
-    "Horror", "Thriller & Suspense", "Historical Fiction", "Romance", "Graphic Novel",
-    "Children’s", "Biography", "Self-help", "History", "True Crime", "Essays"
+    "Horror", "Thriller & Suspense", "Historical Fiction", "Romance",
+    "Graphic Novel", "Children’s", "Biography", "Self-help", "History",
+    "True Crime", "Essays"
 ]
 
 
@@ -44,14 +45,14 @@ class DataGenerator(Faker):
             first_name = self.first_name()
             last_name = self.last_name()
             dob = self.date_between(
-                datetime.date(1960,1,1),
-                datetime.date(1999,12,31)
+                datetime.date(1960, 1, 1),
+                datetime.date(1999, 12, 31)
             )
             city = self.city()
             self._authors_data_list.append((first_name, last_name, dob, city))
         return self._authors_data_list
 
-    def generate_books(self, num: int, authors_range:int) -> List[Tuple]:
+    def generate_books(self, num: int, authors_range: int) -> List[Tuple]:
         """
         Generates book data randomly
 
@@ -62,8 +63,14 @@ class DataGenerator(Faker):
         for _ in range(num):
             random_digit = self.random_int(min=15, max=1000)
             date = self.date_this_century()
-            text = self.text(max_nb_chars=20).rstrip('.') # Removing trailing period from the title.
+            text = self.text(max_nb_chars=20).rstrip('.')  # Removing '.'
             category = random.choice(GENRES)
             author_id = random.randint(1, authors_range)
-            self._books_data_list.append((text, category, random_digit, date, author_id))
+            self._books_data_list.append((
+                text,
+                category,
+                random_digit,
+                date,
+                author_id
+            ))
         return self._books_data_list

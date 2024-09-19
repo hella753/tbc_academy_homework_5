@@ -36,7 +36,11 @@ class Database:
         self._cursor.execute(query)
         self._conn.commit()
 
-    def generate_fake_data(self, books_range: int, authors_range: int) -> List[Tuple]:
+    def generate_fake_data(
+        self,
+        books_range: int,
+        authors_range: int
+    ) -> List[Tuple]:
         """
         Generate fake data for Books & Authors using the DataGenerator class.
 
@@ -48,9 +52,18 @@ class Database:
 
         :return: List of tuples containing books and authors.
         """
-        data_gen= DataGenerator()
-        self._books = tuple(data_gen.generate_books(books_range, authors_range))
-        self._authors = tuple(data_gen.generate_authors(authors_range))
+        data_gen = DataGenerator()
+        self._books = tuple(
+            data_gen.generate_books(
+                books_range,
+                authors_range
+            )
+        )
+        self._authors = tuple(
+            data_gen.generate_authors(
+                authors_range
+            )
+        )
         return [self._books, self._authors]
 
     def insert_data(self, table_name: str, columns: str, data: Tuple) -> None:
@@ -73,9 +86,9 @@ class Database:
 
     def fetch_data(self,
                    table_name: str,
-                   selected: Optional[str]='*',
-                   condition: Optional[str]='',
-                   limit: Optional[str]='') -> List[Tuple]:
+                   selected: Optional[str] = '*',
+                   condition: Optional[str] = '',
+                   limit: Optional[str] = '') -> List[Tuple]:
         """
         Fetch data from the table.
 
